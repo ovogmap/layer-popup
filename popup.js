@@ -5,11 +5,8 @@ import axios from "axios";
 
 function LayerPopup() {
   const [data, setData] = useState([]);
-  // 하루동안 보지 않기 클릭시 24시간후 만료되는 쿠키를 생성하는 함수.
   const fetchPopup = async () => {
-    const res = await axios.get(
-      "https://spovalley.s3.ap-northeast-2.amazonaws.com/popup.json"
-    );
+    const res = await axios.get("...URL");
     const result = res.data;
     setData(result);
   };
@@ -57,7 +54,6 @@ function PopupBox({ setCookie, item }) {
   const [visible, setVisible] = useState();
   const [time, setTime] = useState();
 
-  // 쿠키값 구하는
   function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
